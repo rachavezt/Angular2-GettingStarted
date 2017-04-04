@@ -5,3 +5,7 @@ li {
 div.panel-heading {
    font-size: x-large; 
 }
+
+body {
+    padding: 0 16px;
+}
