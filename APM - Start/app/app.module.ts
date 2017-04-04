@@ -11,7 +11,12 @@ import {WelcomeComponent} from './home/welcome.component'
 import {RouterModule} from '@angular/router'
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule, HttpModule, RouterModule],
+  imports: [ BrowserModule, FormsModule, HttpModule, 
+  RouterModule.forRoot([{path: 'products', component: ProductListComponent},
+                        {path: 'product/:id', component: ProductDetailComponent},
+                        {path: 'welcome', component: WelcomeComponent},
+                        {path: '', redirectTo: 'welcome', pathMatch: 'full'},
+                        {path: '**', redirectTo: 'welcome', pathMatch: 'full'}])],
   declarations: [ AppComponent, ProductListComponent, ProductFilterPipe, StarComponent, WelcomeComponent, ProductDetailComponent],
   bootstrap: [ AppComponent ]
 })
